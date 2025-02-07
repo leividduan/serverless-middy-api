@@ -1,4 +1,4 @@
-service: live055
+service: sls-middy-api
 
 provider:
   name: aws
@@ -6,14 +6,7 @@ provider:
   architecture: arm64
   region: us-east-1
   profile: pessoal
-  iam:
-    role:
-      statements:
-        - Effect: Allow
-          Action: s3:PutObject
-          Resource:
-            - arn:aws:s3:::compressor-test-bucket
-            - arn:aws:s3:::compressor-test-bucket/*
+  memorySize: 256
 
 package:
   individually: true
